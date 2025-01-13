@@ -1,4 +1,6 @@
-## Optional rule attributes
+# Optional rule attributes
+
+## Behavior
 
 The LSP doesn't catch the "optional" property of an attribute if it is in a `dict` of attributes and the first element is an attribute set as mandatory.
 
@@ -22,9 +24,11 @@ my_rule = rule(
 )
 ```
 
-will cause a visual error when calling the rule, for instance in the [BUILD file](./optional-rule-attrs/BUILD):
+## Example
+
+This will cause a visual error when calling the rule, for instance in the [BUILD file](./optional-rule-attrs/BUILD):
 ```
-Argument missing for attribute(s) "some_attr" - starpls
+Argument missing for attribute(s) "_text3", "_text7" - starpls
 ```
 
 But the target can be executed fine & the argument is defaulted:
